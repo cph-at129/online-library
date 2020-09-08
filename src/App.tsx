@@ -11,6 +11,8 @@ import { PrivateRoute, AdminRoute } from './components/PrivateRoute/private-rout
 import { Container } from 'react-bootstrap';
 import ReaderCalendar from './components/ReaderCalendar/readerCalendar';
 import Contact from './components/Contact/contact';
+import ForgottenPassword from './components/ForgottenPassword/forgottenPassword';
+import ResetPassword from './components/ResetPassword/resetPassword';
 
 function App() {
     return (
@@ -25,6 +27,8 @@ function App() {
                         <PrivateRoute exact path="/" component={Home} />
                         <PrivateRoute exact path="/calendar-view" component={ReaderCalendar} />
                         <PrivateRoute exact path="/contact" component={Contact} />
+                        <Route exact path="/forgotten-password" component={ForgottenPassword} />
+                        <Route exact path="/reset-password/:token" component={ResetPassword} />
                     </Switch>
                 </Container>
                 <footer className="footer mt-auto py-3" style={{ backgroundColor: '#f5f5f5' }}>

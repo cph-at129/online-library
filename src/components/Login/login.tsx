@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom'; 
+import { withRouter, Link } from 'react-router-dom'; 
 import { Row, Form, Button, Alert } from 'react-bootstrap';
 import { serverUrl } from '../../config';
 
@@ -55,6 +55,9 @@ const Login = (props: any) => {
                 <Button variant="primary" type="submit">
                     Вход
                 </Button>
+                <Link className="nav-link" to="/forgotten-password">
+                    Забравена парола
+                </Link>
                 {error && <Alert className="mt-5" variant="danger">{error}</Alert>}
             </Form>
         </Row>
