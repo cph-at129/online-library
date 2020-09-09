@@ -19,7 +19,7 @@ const Navigation = () => (
                     Регистрация
                 </Link>}
                 {getToken() && (checkIsAdmin() || checkIsChiefLibrarian() || checkIsLibrarian()) && <Link className="nav-link" to="/admin">
-                    Админ
+                    Модули за управление
                 </Link>}
                 {getToken() && checkIsReader() && <Link className="nav-link" to="/calendar-view">
                     Календар

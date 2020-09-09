@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom'; 
 import { Row, Form, Button, Alert } from 'react-bootstrap';
 import { serverUrl } from '../../config';
+import { checkIsAdmin } from '../../utils/auth';
 
 const Login = (props: any) => {
 
@@ -30,7 +31,11 @@ const Login = (props: any) => {
             //save token
             try {
                 sessionStorage.setItem("token", result.data.token);
-                props.history.push('/')
+                if (checkIsAdmin()) {
+                    props.history.push('/admin-home');
+                } else {
+                    props.history.push('/')
+                }
                 window.location.reload()
             } catch (error) {
                 setError("Нещо се обърка!")

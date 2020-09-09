@@ -13,6 +13,7 @@ import ReaderCalendar from './components/ReaderCalendar/readerCalendar';
 import Contact from './components/Contact/contact';
 import ForgottenPassword from './components/ForgottenPassword/forgottenPassword';
 import ResetPassword from './components/ResetPassword/resetPassword';
+import AdminHome from './components/AdminHome/adminHome';
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                         <PrivateRoute exact path="/" component={Home} />
                         <PrivateRoute exact path="/calendar-view" component={ReaderCalendar} />
                         <PrivateRoute exact path="/contact" component={Contact} />
+                        <PrivateRoute exact path="/admin-home" component={AdminHome} />
                         <Route exact path="/forgotten-password" component={ForgottenPassword} />
                         <Route exact path="/reset-password/:token" component={ResetPassword} />
                     </Switch>
